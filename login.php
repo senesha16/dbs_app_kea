@@ -2,6 +2,11 @@
 
 session_start();
 
+if (isset($_SESSION['admin_id'])) {
+    header("Location: index.php");
+    exit();
+}
+
 require_once('classes/database.php');
 $con = new database();
 
